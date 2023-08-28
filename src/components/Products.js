@@ -31,7 +31,7 @@ const Products = ({ products }) => {
           </li>
         ))
       ) : (
-        <p>Loading products...</p>
+        <p className="products-container">Loading products...</p>
       )}
     </ul>
   );
