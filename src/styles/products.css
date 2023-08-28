@@ -1,4 +1,5 @@
 .products-container {
+  flex-grow: 2;
   display: grid;
   grid-template-columns: repeat(auto-fill, 30%);
   align-items: center;
