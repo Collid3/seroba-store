@@ -31,7 +31,7 @@ export const DataProvider = ({ children }) => {
       setCart(fetchedCart);
     }
 
-    return () => fetchProducts();
+    fetchProducts();
   }, []);
 
   useEffect(() => {
