@@ -14,7 +14,10 @@ export const DataProvider = ({ children }) => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
+        console.log("here");
         const response = await axios.get("https://fakestoreapi.com/products");
+        console.log("here 2");
+        console.log(response.data);
         setProducts(response.data);
         setError(null);
         setLoading(false);

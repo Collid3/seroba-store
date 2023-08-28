@@ -3,6 +3,8 @@
   align-items: start;
   flex-grow: 2;
   margin-top: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .product-image {
