@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await api.get("");
+        const response = await api.get("https://fakestoreapi.com/products");
         setProducts(response.data);
         setError(null);
         setLoading(false);
