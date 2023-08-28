@@ -8,24 +8,31 @@ const Products = ({ products }) => {
 
   return (
     <ul className="products-container">
-      {products.map((product) => (
-        <li key={product.id} onClick={() => navigate(`/product/${product.id}`)}>
-          <img src={product.image} alt="" width={200} />
+      {products.length > 0 ? (
+        products.map((product) => (
+          <li
+            key={product.id}
+            onClick={() => navigate(`/product/${product.id}`)}
+          >
+            <img src={product.image} alt="" width={200} />
 
-          <section>
-            <h4>{product.title}</h4>
+            <section>
+              <h4>{product.title}</h4>
 
-            <div className="reviews">
-              <div className="stars">
-                {" "}
-                <Reviews product={product} />
+              <div className="reviews">
+                <div className="stars">
+                  {" "}
+                  <Reviews product={product} />
+                </div>
               </div>
-            </div>
 
-            <h4>Price: R{product.price}</h4>
-          </section>
-        </li>
-      ))}
+              <h4>Price: R{product.price}</h4>
+            </section>
+          </li>
+        ))
+      ) : (
+        <p>Loading products...</p>
+      )}
     </ul>
   );
 };
