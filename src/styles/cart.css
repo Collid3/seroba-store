@@ -1,0 +1,93 @@
+.cart-page-container {
+  box-shadow: 0 0 5px #ccd0d5;
+  margin: 10px;
+  padding: 10px 20px;
+  flex-grow: 2;
+  margin-top: 15px;
+}
+
+.cart-container li {
+  display: flex;
+  padding: 15px 0;
+}
+
+.cart-container li .image-container {
+  width: 30%;
+  padding: 0 8%;
+  padding-left: 0;
+}
+
+.cart-container li section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+}
+
+.cart-container li section > div {
+  display: flex;
+  gap: 10px;
+}
+
+.cart-container li section > div select {
+  outline: none;
+}
+
+.cart-container li section > div div {
+  outline: 1px solid #ccd0d5;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+
+.cart-container li section > div button {
+  padding: 5px 15px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.checkout-section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  background-color: #101820;
+  padding: 5px;
+  padding-bottom: 10px;
+  color: white;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  font-size: 1.4rem;
+}
+
+.checkout-section button {
+  width: 100%;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 1200px) {
+  .cart-page-container {
+    width: 98%;
+    margin: 15px auto;
+  }
+
+  .cart-container li .image-container {
+    width: 25%;
+    padding: 0 11%;
+    padding-left: 0;
+  }
+
+  .cart-container li section {
+    width: 80%;
+  }
+
+  .checkout-section button {
+    width: 50%;
+  }
+}
