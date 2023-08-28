@@ -46,4 +46,8 @@
   .products-container {
     grid-template-columns: repeat(auto-fill, 20%);
   }
+
+  .products-container img {
+    width: 55%;
+  }
 }
