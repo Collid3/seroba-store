@@ -3,11 +3,15 @@ import DataContext from "../context/DataContext";
 import Products from "../components/Products";
 
 const Home = () => {
-  const { products } = useContext(DataContext);
+  const { filteredProducts, loading, error } = useContext(DataContext);
 
   return (
     <main>
-      <Products products={products} />
+      <Products
+        filteredProducts={filteredProducts}
+        loading={loading}
+        error={error}
+      />
 
       <button
         className="back-to-top-button"

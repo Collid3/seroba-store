@@ -9,11 +9,11 @@ import { useContext } from "react";
 import DataContext from "./context/DataContext";
 
 function App() {
-  const { cart } = useContext(DataContext);
+  const { cart, filteredProducts } = useContext(DataContext);
 
   return (
     <div className="App">
-      <Header cart={cart} />
+      <Header cart={cart} filteredProducts={filteredProducts} />
       <Routes>
         <Route path="/*" element={<Home />} />
         <Route path="/product/:productId" element={<Product />} />

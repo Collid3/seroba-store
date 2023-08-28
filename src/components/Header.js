@@ -3,8 +3,12 @@ import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const Header = ({ cart }) => {
+const Header = ({ cart, setFilteredProducts }) => {
   const navigate = useNavigate("");
+
+  //  const filterProducts = (category) => {
+  //   setFilteredProducts(prev => {return prev.filter(product => )})
+  //  }
 
   return (
     <header>
