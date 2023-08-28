@@ -7,6 +7,12 @@
   gap: 10px;
 }
 
+.category {
+  text-transform: capitalize;
+  text-align: center;
+  margin-top: 5px;
+}
+
 .products-container img {
   height: 80%;
   width: 75%;

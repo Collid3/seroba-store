@@ -3,7 +3,8 @@ import DataContext from "../context/DataContext";
 import Products from "../components/Products";
 
 const Home = () => {
-  const { filteredProducts, loading, error } = useContext(DataContext);
+  const { filteredProducts, loading, error, category } =
+    useContext(DataContext);
 
   return (
     <main>
@@ -11,6 +12,7 @@ const Home = () => {
         filteredProducts={filteredProducts}
         loading={loading}
         error={error}
+        category={category}
       />
 
       <button

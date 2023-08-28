@@ -3,12 +3,12 @@ import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const Header = ({ cart, setFilteredProducts }) => {
+const Header = ({ cart, setCategory }) => {
   const navigate = useNavigate("");
 
-  //  const filterProducts = (category) => {
-  //   setFilteredProducts(prev => {return prev.filter(product => )})
-  //  }
+  const handleChangeCategory = (selectedCategory) => {
+    setCategory(selectedCategory);
+  };
 
   return (
     <header>
@@ -17,12 +17,12 @@ const Header = ({ cart, setFilteredProducts }) => {
       </h1>
 
       <div className="search-bar">
-        <select name="" id="">
-          <option value="">All</option>
-          <option value="">Men's clothes</option>
-          <option value="">Women's clothes</option>
-          <option value="">Jewelery</option>
-          <option value="">Electronics</option>
+        <select onChange={(e) => handleChangeCategory(e.target.value)}>
+          <option value="all">All</option>
+          <option value="men's clothing">Men's clothes</option>
+          <option value="women's clothing">Women's clothes</option>
+          <option value="jewelery">Jewelery</option>
+          <option value="electronics">Electronics</option>
         </select>
         <input type="search" placeholder="search" />
       </div>

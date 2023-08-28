@@ -9,12 +9,12 @@ export const DataProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [category, setCategory] = useState("all");
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        console.log("here");
         const response = await axios.get("https://fakestoreapi.com/products");
         console.log(response.data);
         setProducts(response.data);
@@ -38,6 +38,14 @@ export const DataProvider = ({ children }) => {
     setFilteredProducts(products);
   }, [products]);
 
+  useEffect(() => {
+    if (category === "all") return setFilteredProducts(products);
+
+    setFilteredProducts(
+      products.filter((product) => product.category === category)
+    );
+  }, [category, products]);
+
   return (
     <DataContext.Provider
       value={{
@@ -48,6 +56,8 @@ export const DataProvider = ({ children }) => {
         setFilteredProducts,
         loading,
         error,
+        category,
+        setCategory,
       }}
     >
       {children}

@@ -3,7 +3,7 @@ import "../styles/products.css";
 import React from "react";
 import Reviews from "./Reviews";
 
-const Products = ({ filteredProducts, loading, error }) => {
+const Products = ({ filteredProducts, loading, error, category }) => {
   const navigate = useNavigate("");
 
   return (
@@ -21,29 +21,35 @@ const Products = ({ filteredProducts, loading, error }) => {
       )}
 
       {!loading && !error && (
-        <ul className="products-container">
-          {filteredProducts.map((product) => (
-            <li
-              key={product.id}
-              onClick={() => navigate(`/product/${product.id}`)}
-            >
-              <img src={product.image} alt="" width={200} />
+        <>
+          <h2 className="category">
+            {category === "all" ? "All Clothes" : category}
+          </h2>
 
-              <section>
-                <h4>{product.title}</h4>
+          <ul className="products-container">
+            {filteredProducts.map((product) => (
+              <li
+                key={product.id}
+                onClick={() => navigate(`/product/${product.id}`)}
+              >
+                <img src={product.image} alt="" width={200} />
 
-                <div className="reviews">
-                  <div className="stars">
-                    {" "}
-                    <Reviews product={product} />
+                <section>
+                  <h4>{product.title}</h4>
+
+                  <div className="reviews">
+                    <div className="stars">
+                      {" "}
+                      <Reviews product={product} />
+                    </div>
                   </div>
-                </div>
 
-                <h4>Price: R{product.price}</h4>
-              </section>
-            </li>
-          ))}
-        </ul>
+                  <h4>Price: R{product.price}</h4>
+                </section>
+              </li>
+            ))}
+          </ul>
+        </>
       )}
     </>
   );
