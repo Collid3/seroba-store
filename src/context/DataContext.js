@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import api from "../api/api";
+import axios from "axios";
 
 const DataContext = createContext({});
 
@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await api.get("https://fakestoreapi.com/products");
+        const response = await axios.get("https://fakestoreapi.com/products");
         setProducts(response.data);
         setError(null);
         setLoading(false);
