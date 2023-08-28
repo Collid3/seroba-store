@@ -16,7 +16,6 @@ export const DataProvider = ({ children }) => {
         setLoading(true);
         console.log("here");
         const response = await axios.get("https://fakestoreapi.com/products");
-        console.log("here 2");
         console.log(response.data);
         setProducts(response.data);
         setError(null);
